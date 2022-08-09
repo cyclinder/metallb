@@ -42,13 +42,16 @@ prometheus:
   # certificate to be used.
   controllerMetricsTLSSecret: ""
 
-  # the service account used by prometheus
-  # required when .Values.prometheus.podMonitor.enabled == true
-  serviceAccount: ""
+  # Create rbac resources for prometheus
+  rbacPrometheus:
+    enabled: false
+    # the service account used by prometheus
+    # required when .Values.prometheus.rbacPrometheus.enabled == true
+    serviceAccount: ""
 
-  # the namespace where prometheus is deployed
-  # required when .Values.prometheus.podMonitor.enabled == true
-  namespace: ""
+    # the namespace where prometheus is deployed
+    # required when .Values.prometheus.rbacPrometheus.enabled == true
+    namespace: ""
 
   # the image to be used for the kuberbacproxy container
   rbacProxy:

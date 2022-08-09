@@ -58,7 +58,6 @@ A network load-balancer implementation for Kubernetes using standard routing pro
 | nameOverride | string | `""` |  |
 | prometheus.controllerMetricsTLSSecret | string | `""` |  |
 | prometheus.metricsPort | int | `7472` |  |
-| prometheus.namespace | string | `""` |  |
 | prometheus.podMonitor.additionalLabels | object | `{}` |  |
 | prometheus.podMonitor.annotations | object | `{}` |  |
 | prometheus.podMonitor.enabled | bool | `false` |  |
@@ -85,10 +84,12 @@ A network load-balancer implementation for Kubernetes using standard routing pro
 | prometheus.prometheusRule.extraAlerts | list | `[]` |  |
 | prometheus.prometheusRule.staleConfig.enabled | bool | `true` |  |
 | prometheus.prometheusRule.staleConfig.labels.severity | string | `"warning"` |  |
+| prometheus.rbacPrometheus.enabled | bool | `false` |  |
+| prometheus.rbacPrometheus.namespace | string | `""` |  |
+| prometheus.rbacPrometheus.serviceAccount | string | `""` |  |
 | prometheus.rbacProxy.repository | string | `"gcr.io/kubebuilder/kube-rbac-proxy"` |  |
 | prometheus.rbacProxy.tag | string | `"v0.12.0"` |  |
 | prometheus.scrapeAnnotations | bool | `false` |  |
-| prometheus.serviceAccount | string | `""` |  |
 | prometheus.serviceMonitor.controller.additionalLabels | object | `{}` |  |
 | prometheus.serviceMonitor.controller.annotations | object | `{}` |  |
 | prometheus.serviceMonitor.controller.tlsConfig.insecureSkipVerify | bool | `true` |  |

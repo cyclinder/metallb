@@ -179,14 +179,21 @@
         "scrapeAnnotations": { "type": "boolean" },
         "metricsPort": { "type": "integer" },
         "secureMetricsPort": { "type": "integer" },
-        "serviceAccount": { "type": "string" },
-        "namespace": { "type": "string" },
         "rbacProxy": {
           "description": "kube-rbac-proxy configuration",
           "type": "object",
           "properties": {
             "repository": { "type": "string" },
             "tag": { "type": "string" }
+          }
+        },
+        "rbacPrometheus": {
+          "description": "create rbac resources for prometheus",
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "serviceAccount": { "type": "string" },
+            "namespace": { "type": "string" }
           }
         },
         "podMonitor": {
